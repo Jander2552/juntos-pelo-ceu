@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Santa Teresa de Calcutá",
+    "filename": "mother-teresa.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mother_Teresa_1.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Mother_Teresa_1.jpg",
+    "license": "Wikimedia Commons (see file page)"
+  },
+  {
+    "name": "Santo Agostinho",
+    "filename": "santo-agostinho.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+    "license": "Wikimedia Commons (see file page)"
+  },
+  {
+    "name": "Papa Bento XVI",
+    "filename": "papa-bento-xvi.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/98/Benedykt_XVI_%282010-10-17%29_2.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Benedykt_XVI_%282010-10-17%29_2.jpg",
+    "license": "Wikimedia Commons (see file page)"
+  },
+  {
+    "name": "São João da Cruz",
+    "filename": "sao-joao-da-cruz.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Zurbar%C3%A1n_%28atribuido%29-John_of_the_Cross-1656.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_%28atribuido%29-John_of_the_Cross-1656.jpg",
+    "license": "Wikimedia Commons (see file page)"
+  },
+  {
+    "name": "Papa João Paulo II",
+    "filename": "papa-joao-paulo-ii.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/9c/ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg",
+    "license": "Wikimedia Commons (see file page)"
+  }
+]
