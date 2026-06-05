@@ -269,7 +269,17 @@
     }
 
     currentTestimonialIndex = (index + testimonialCards.length) % testimonialCards.length;
-    const cardWidth = testimonialCards[0].offsetWidth + 24;
+    // calculate actual card width including current margin-right (works across breakpoints)
+    const firstCard = testimonialCards[0];
+    const cardStyle = window.getComputedStyle(firstCard);
+    let spacing = parseFloat(cardStyle.marginRight) || 0;
+    if (!spacing) {
+      // if layout uses CSS gap on the track, read that instead
+      const trackStyle = window.getComputedStyle(testimonialTrack);
+      const gapVal = trackStyle.getPropertyValue('gap') || trackStyle.getPropertyValue('column-gap') || trackStyle.getPropertyValue('grid-column-gap');
+      spacing = parseFloat(gapVal) || 0;
+    }
+    const cardWidth = firstCard.offsetWidth + spacing;
     testimonialTrack.style.transform = 'translateX(-' + (currentTestimonialIndex * cardWidth) + 'px)';
 
     testimonialDots.forEach(function (dot, dotIndex) {

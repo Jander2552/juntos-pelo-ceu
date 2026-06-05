@@ -70,6 +70,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content-visibility: auto;
   contain-intrinsic-size: 1px 420px;
 }
+.testimonial-card {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
+}
 .section-label {
   display: inline-block;
   font-family: var(--font-sans);
@@ -853,6 +857,13 @@ h1,h2,h3,h4,h5,h6 {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 12px 10px;
+}
+
 .testimonial-card:last-child { margin-right: 0; }
 .testimonial-card:hover {
   transform: translateY(-4px);
@@ -1266,7 +1277,6 @@ h1,h2,h3,h4,h5,h6 {
   .projects__grid,
   .testimonials__track {
     display: flex;
-    overflow-x: auto;
     gap: 16px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -1415,11 +1425,15 @@ h1,h2,h3,h4,h5,h6 {
   .project-card__text { font-size: 14px; margin-bottom: 14px; }
 
   .testimonials { background: transparent; }
-  .testimonials__slider { overflow: visible; }
-  .testimonial-card { padding: 24px 20px; border-radius: 24px; }
-  .testimonial-card__quote { font-size: 56px; margin-bottom: 12px; }
-  .testimonial-card__text { font-size: 16px; margin-bottom: 20px; }
-  .testimonials__dots { margin-top: 20px; }
+  .testimonials__slider { overflow: hidden; }
+  .testimonial-card { padding: 12px 12px 10px; border-radius: 20px; gap: 6px; }
+  .testimonial-card__quote { font-size: 40px; margin-bottom: 0; }
+  .testimonial-card__stars { margin-bottom: 4px; }
+  .testimonial-card__text { font-size: 14px; line-height: 1.35; margin-bottom: 8px; }
+  .testimonial-card__author { gap: 8px; align-items: center; }
+  .testimonial-card__avatar { width: 40px; height: 40px; }
+  .testimonial-card__name { font-size: 14px; }
+  .testimonials__dots { margin-top: 12px; }
 
   .gallery__grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .gallery__item--wide { grid-column: span 2; }
@@ -1458,7 +1472,7 @@ h1,h2,h3,h4,h5,h6 {
   .footer__nav-list { gap: 10px; }
   .footer__tagline { max-width: none; }
 
-  .testimonial-card { padding: 28px 24px; }
+  .testimonial-card { padding: 12px 12px 10px; }
 
   .gallery-page__toolbar { flex-direction: column; align-items: flex-start; }
   .gallery-toolbar { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
