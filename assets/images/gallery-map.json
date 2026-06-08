@@ -1,29 +1,152 @@
-{
-  "PadreInicio": [
-    "WhatsApp Image 2026-05-24 at 21.55.15.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.16.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.19.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.20.jpeg"
-  ],
-  "DNJ": [
-    "WhatsApp Image 2026-05-24 at 21.55.21.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.22.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.23.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.24.jpeg"
-  ],
-  "JARQJ": [
-    "WhatsApp Image 2026-05-24 at 21.55.25.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.26.jpeg",
-    "WhatsApp Image 2026-05-24 at 21.55.27.jpeg"
-  ],
-  "Planet Park": [
-    "WhatsApp Image 2026-01-22 at 12.05.09.jpg.jpeg",
-    "WhatsApp Image 2026-01-22 at 12.05.10.jpg.jpeg",
-    "WhatsApp Image 2026-01-22 at 12.09.34.jpg.jpeg"
-  ],
-  "Diretoria AJPC": [
-    "WhatsApp Image 2026-01-22 at 11.06.57.jpg.jpeg",
-    "WhatsApp Image 2026-01-22 at 11.14.42.jpg.jpeg",
-    "WhatsApp Image 2026-01-22 at 11.19.22.jpg.jpeg"
-  ]
+﻿{
+    "INTERPAROQUIAS 2024":  [
+                                "WhatsApp Image 2026-01-22 at 12.15.21 (1) (1).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.15.21 (2).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.15.22 (3).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.15.23 (1).jpg"
+                            ],
+    "DIA DAS CRIANÇAS PLANET PARK":  [
+                                         "WhatsApp Image 2026-01-22 at 15.18.21 (1).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.18.21.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.18.22 (1).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.18.22 (2).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.28.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.29 (1).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.29.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.30 (1).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.30 (2).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.30 (3).jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.30.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.20.31.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.29.36.jpg",
+                                         "WhatsApp Image 2026-01-22 at 15.47.02.jpg"
+                                     ],
+    "DNJ 2025":  [
+                     "WhatsApp Image 2026-01-22 at 14.29.30.jpg",
+                     "WhatsApp Image 2026-01-22 at 14.29.31 (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 14.29.31.jpg",
+                     "WhatsApp Image 2026-01-22 at 14.29.32 (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 14.29.32.jpg"
+                 ],
+    "CAMINHADA PELA VIDA 2023":  [
+                                     "WhatsApp Image 2026-01-22 at 12.05.09 (1).jpg.jpeg",
+                                     "WhatsApp Image 2026-01-22 at 12.05.09.jpg.jpeg",
+                                     "WhatsApp Image 2026-01-22 at 12.05.10 (1).jpg.jpeg",
+                                     "WhatsApp Image 2026-01-22 at 12.05.10.jpg.jpeg"
+                                 ],
+    "DNJ 2024":  [
+                     "WhatsApp Image 2026-01-22 at 12.28.50 (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.28.50 (2).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.28.51 (1) (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.28.51 (2).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.28.52 (1).jpg"
+                 ],
+    "JARQJ 2023":  [
+                       "WhatsApp Image 2026-01-22 at 11.19.22 (1).jpg.jpeg",
+                       "WhatsApp Image 2026-01-22 at 11.19.22 (2).jpg.jpeg",
+                       "WhatsApp Image 2026-01-22 at 11.19.22.jpg.jpeg"
+                   ],
+    "JARQJ 2025":  [
+                       "WhatsApp Image 2026-01-22 at 14.03.13 (1) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 14.03.13 (2).jpg",
+                       "WhatsApp Image 2026-01-22 at 14.03.14 (1) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 14.03.14 (2) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 14.03.14 (3).jpg"
+                   ],
+    "DNJ 2020":  [
+                     "WhatsApp Image 2026-01-22 at 11.06.57 (1).jpg.jpeg",
+                     "WhatsApp Image 2026-01-22 at 11.06.57.jpg.jpeg"
+                 ],
+    "SETEMBRO AMARELO 2025":  [
+                                  "WhatsApp Image 2026-01-22 at 14.21.45 (1).jpg",
+                                  "WhatsApp Image 2026-01-22 at 14.21.45.jpg",
+                                  "WhatsApp Image 2026-01-22 at 14.21.46 (1).jpg",
+                                  "WhatsApp Image 2026-01-22 at 14.21.46 (2).jpg",
+                                  "WhatsApp Image 2026-01-22 at 14.21.46.jpg"
+                              ],
+    "DNJ 2023":  [
+                     "WhatsApp Image 2026-01-22 at 12.09.34 (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.09.35 (1) (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.09.35 (2) (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.09.35 (3).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.29.38 (1).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.29.38 (2).jpg",
+                     "WhatsApp Image 2026-01-22 at 12.29.38.jpg",
+                     "WhatsApp Image 2026-01-22 at 12.31.13.jpg",
+                     "WhatsApp Image 2026-01-22 at 12.31.14.jpg"
+                 ],
+    "ORATORIO PLANET PARK":  [
+                                 "WhatsApp Image 2026-01-22 at 18.11.33 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.11.33 (2).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.11.33 (3).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.11.33.jpg"
+                             ],
+    "JARQJ 2024":  [
+                       "WhatsApp Image 2026-01-22 at 13.26.46 (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.47 (1) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.47 (2).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.48.jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.49 (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.50 (1) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.50 (2).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.51 (1) (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.51 (2).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.52 (1).jpg",
+                       "WhatsApp Image 2026-01-22 at 13.26.52 (2) (1).jpg"
+                   ],
+    "ORATORIO 2024 - 2025":  [
+                                 "WhatsApp Image 2026-01-22 at 12.25.57.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.25.58 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.25.58.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.25.59.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.00 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.00.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.01 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.01 (2).jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.01.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.02.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.03.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.04 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.04.jpg",
+                                 "WhatsApp Image 2026-01-22 at 12.26.05.jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.08 (2).jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.11 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.11 (2).jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.11 (3).jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.11.jpg",
+                                 "WhatsApp Image 2026-01-22 at 14.36.12.jpg"
+                             ],
+    "VOLEI ASSOCIAÇÃO JPC":  [
+                                 "WhatsApp Image 2026-01-22 at 18.25.48 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.48.jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.49 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.49.jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.50 (1).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.50 (2).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.50 (3).jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.50.jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.25.52.jpg",
+                                 "WhatsApp Image 2026-01-22 at 18.26.04 (1).jpg"
+                             ],
+    "INTERPAROQUIAS 2025":  [
+                                "WhatsApp Image 2026-01-22 at 12.15.22 (1) (1).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.15.22 (2) (1).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.26.56 (1).jpg",
+                                "WhatsApp Image 2026-01-22 at 12.26.57 (1).jpg"
+                            ],
+    "DNJ 2022":  [
+                     "WhatsApp Image 2026-01-22 at 11.14.42 (1).jpg.jpeg",
+                     "WhatsApp Image 2026-01-22 at 11.14.42 (2).jpg.jpeg",
+                     "WhatsApp Image 2026-01-22 at 11.14.42.jpg.jpeg"
+                 ],
+    "VISITA LAR DOS IDOSOS - LAR DO ACONCHEGO - STO ANTONIO DE LEVERGER":  [
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.22 (1).jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.22 (2).jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.22.jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.23.jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.24 (1).jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.24.jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.25 (1).jpg",
+                                                                               "WhatsApp Image 2026-01-22 at 14.37.25.jpg"
+                                                                           ]
 }

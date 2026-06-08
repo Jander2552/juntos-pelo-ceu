@@ -18,7 +18,8 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function resolveAsset(fileName) {
-    return assetPrefix + 'assets/images/' + fileName;
+    // ensure spaces and special chars are encoded for the URL
+    return encodeURI(assetPrefix + 'assets/images/' + fileName);
   }
 
   function updateActiveNav() {
@@ -336,7 +337,8 @@
     const galleryLoadMore = document.getElementById('gallery-load-more');
     const galleryStatus = document.getElementById('gallery-status');
 
-    const galleryItems = [
+    // fallback static items (used if gallery-map.json isn't available)
+    const fallbackItems = [
       { file: 'WhatsApp Image 2026-05-24 at 21.55.15.jpeg', category: 'Eventos', title: 'Retiro Jovem', description: 'Momento de oração e encontro.' },
       { file: 'WhatsApp Image 2026-05-24 at 21.55.15 (1).jpeg', category: 'Eventos', title: 'Retiro Jovem', description: 'Participação em comunidade.' },
       { file: 'WhatsApp Image 2026-05-24 at 21.55.16.jpeg', category: 'Encontros', title: 'Acolhida', description: 'Recepção e partilha.' },
@@ -361,11 +363,49 @@
       { file: 'WhatsApp Image 2026-01-22 at 11.19.22.jpg.jpeg', category: 'Formação', title: 'Diretoria', description: 'Equipe e governança.' }
     ];
 
-    const categories = ['Todos', 'Eventos', 'Projetos', 'Missões', 'Encontros', 'Formação'];
+    // dynamic gallery data (will be populated from gallery-map.json when available)
+    let galleryItems = [];
+    let categories = ['Todos'];
     let activeCategory = 'Todos';
     let visibleCount = 9;
     let activeItems = [];
     let lightboxIndex = 0;
+
+    // attempt to load gallery-map.json which maps folders/categories to filenames
+    (function loadGalleryMap() {
+      const mapUrl = assetPrefix + 'assets/images/gallery-map.json';
+      fetch(mapUrl).then(function (res) {
+        if (!res.ok) {
+          throw new Error('Mapa não encontrado');
+        }
+        return res.json();
+      }).then(function (map) {
+        galleryItems = [];
+        categories = ['Todos'];
+        Object.keys(map).forEach(function (category) {
+          categories.push(category);
+          const files = map[category] || [];
+          files.forEach(function (fileName) {
+            galleryItems.push({
+              // try to load image from folder named as category first
+              file: category + '/' + fileName,
+              category: category,
+              title: category,
+              description: ''
+            });
+          });
+        });
+        buildToolbar();
+        renderGallery();
+      }).catch(function (err) {
+        // fallback to the embedded static set if the map cannot be loaded
+        console.error('Erro ao carregar gallery-map.json:', err);
+        galleryItems = fallbackItems.slice();
+        categories = ['Todos', 'Eventos', 'Projetos', 'Missões', 'Encontros', 'Formação'];
+        buildToolbar();
+        renderGallery();
+      });
+    }());
 
     function buildToolbar() {
       if (!galleryToolbar) {
@@ -394,9 +434,11 @@
       const itemsToRender = activeItems.slice(0, visibleCount);
 
       galleryGrid.innerHTML = itemsToRender.map(function (item, index) {
+        // attempt to load image from category folder; on error fallback to root assets/images
+        const fallbackRoot = resolveAsset((item.file || '').split('/').pop());
         return [
           '<button class="gallery-card reveal visible" data-index="' + index + '" type="button">',
-          '<img class="gallery-card__img" src="' + resolveAsset(item.file) + '" alt="' + item.title + '" loading="lazy" decoding="async" />',
+          '<img class="gallery-card__img" src="' + resolveAsset(item.file) + '" alt="' + item.title + '" loading="lazy" decoding="async" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src=\'' + fallbackRoot + '\';}" />',
           '<div class="gallery-card__meta">',
           '<span class="gallery-card__category">' + item.category + '</span>',
           '<strong class="gallery-card__title">' + item.title + '</strong>',
@@ -433,8 +475,14 @@
       }
 
       const item = activeItems[(lightboxIndex + activeItems.length) % activeItems.length];
-      galleryLightboxImage.src = resolveAsset(item.file);
-      galleryLightboxImage.alt = item.title;
+      if (galleryLightboxImage) {
+        galleryLightboxImage.onerror = function () {
+          this.onerror = null;
+          this.src = resolveAsset((item.file || '').split('/').pop());
+        };
+        galleryLightboxImage.src = resolveAsset(item.file);
+        galleryLightboxImage.alt = item.title;
+      }
       if (galleryLightboxCaption) {
         galleryLightboxCaption.textContent = item.category + ' · ' + item.title + ' · ' + item.description;
       }
