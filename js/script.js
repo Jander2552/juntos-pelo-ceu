@@ -93,23 +93,71 @@
     }
   });
 
+  function closeMobileMenu(animate) {
+    if (!nav.classList.contains('open')) { return; }
+
+    if (animate) {
+      nav.classList.add('closing');
+      window.setTimeout(function () {
+        nav.classList.remove('open', 'closing');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+        body.style.overflow = '';
+      }, 360);
+    } else {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      body.classList.remove('menu-open');
+      body.style.overflow = '';
+    }
+  }
+
+  function openMobileMenu() {
+    nav.classList.remove('closing');
+    nav.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    body.classList.add('menu-open');
+    body.style.overflow = 'hidden';
+  }
+
   if (hamburger && nav) {
     hamburger.addEventListener('click', function () {
-      const isOpen = nav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      body.style.overflow = isOpen ? 'hidden' : '';
+      if (nav.classList.contains('open')) {
+        closeMobileMenu(true);
+      } else {
+        openMobileMenu();
+      }
     });
 
-    nav.querySelectorAll('.nav__link').forEach(function (link) {
+    var navClose = nav.querySelector('.nav__close');
+    if (navClose) {
+      navClose.addEventListener('click', function () {
+        closeMobileMenu(true);
+      });
+    }
+
+    nav.addEventListener('click', function (event) {
+      if (event.target === nav) {
+        closeMobileMenu(true);
+      }
+    });
+
+    nav.querySelectorAll('.nav__link, .nav__brand').forEach(function (link) {
       link.addEventListener('click', function () {
-        if ((this.getAttribute('href') || '').charAt(0) === '#') {
-          nav.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          body.style.overflow = '';
+        var href = this.getAttribute('href') || '';
+        if (href.charAt(0) === '#' || href.indexOf('index.html') !== -1) {
+          closeMobileMenu(true);
         }
       });
+    });
+
+    window.addEventListener('resize', function () {
+      if (nav.classList.contains('open')) { return; }
+      body.classList.remove('menu-open');
+      body.style.overflow = '';
     });
   }
 
