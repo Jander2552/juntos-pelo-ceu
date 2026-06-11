@@ -35,7 +35,7 @@
   <header class="header" id="header">
     <div class="header__inner container">
       <a href="../index.html#home" class="header__logo" aria-label="Associação Juntos Pelo Céu">
-        <img src="../assets/images/INSTITUCIONAL/logo-header-transparent.png" data-logo-default="../assets/images/INSTITUCIONAL/logo-header-transparent.png" data-logo-scrolled="../assets/images/INSTITUCIONAL/logo-header-transparent.png" alt="Associação Juntos Pelo Céu" class="logo-img" width="62" height="62" />
+        <img src="../assets/images/INSTITUCIONAL/logo-transparent.png" data-logo-default="../assets/images/INSTITUCIONAL/logo-transparent.png" data-logo-scrolled="../assets/images/INSTITUCIONAL/logo-header-transparent.png" alt="Associação Juntos Pelo Céu" class="logo-img" width="62" height="62" />
       </a>
       <nav class="header__nav" id="nav" aria-label="Menu principal">
         <ul class="nav__list">
@@ -83,7 +83,7 @@
   </main>
 
   <div id="gallery-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="lightbox__overlay"></div>
+    <div class="lightbox__overlay" data-action="close"></div>
     <div class="lightbox__content">
       <button class="lightbox__close" aria-label="Fechar">&times;</button>
       <button class="lightbox__nav lightbox__prev" aria-label="Anterior">&#8249;</button>
@@ -165,6 +165,44 @@
     </button>
   </div>
 
+  <!-- ===== DONATION MODAL (PIX) ===== -->
+  <div id="donation-modal" class="donation-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="donation-modal__overlay" data-action="close-donation-modal"></div>
+    <div class="donation-modal__content">
+      <button class="donation-modal__close" data-action="close-donation-modal" aria-label="Fechar">&times;</button>
+      <div class="donation-modal__header">
+        <h3>Doação via PIX</h3>
+        <p>Escaneie o QR Code ou copie a chave abaixo</p>
+      </div>
+      <div class="donation-modal__body">
+        <div class="donation-modal__qrcode">
+          <div id="donation-qrcode"></div>
+        </div>
+        <div class="donation-modal__info">
+          <div class="donation-modal__field">
+            <label>Chave PIX (CNPJ)</label>
+            <div class="donation-modal__copy-row">
+              <input type="text" id="donation-pix-key" value="35.839.978/0001-26" readonly />
+              <button class="donation-modal__copy-btn" data-copy="donation-pix-key" aria-label="Copiar chave PIX">Copiar</button>
+            </div>
+          </div>
+          <div class="donation-modal__field">
+            <label>Beneficiário</label>
+            <span>Associação Juntos Pelo Céu</span>
+          </div>
+          <div class="donation-modal__field">
+            <label>Código Pix Copia e Cola</label>
+            <div class="donation-modal__copy-row">
+              <input type="text" id="donation-pix-payload" readonly />
+              <button class="donation-modal__copy-btn" data-copy="donation-pix-payload" aria-label="Copiar código Pix">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="../js/script.js"></script>
 </body>
 </html>

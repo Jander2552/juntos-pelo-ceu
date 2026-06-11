@@ -535,7 +535,7 @@
     }
     if (galleryLightbox) {
       galleryLightbox.addEventListener('click', function (event) {
-        if (event.target === galleryLightbox) {
+        if (event.target === galleryLightbox || event.target.getAttribute('data-action') === 'close') {
           closeLightbox();
         }
       });
@@ -560,6 +560,144 @@
     buildToolbar();
     renderGallery();
   }
+
+  /* ---- PIX Donation Modal ---- */
+  (function () {
+    var pixKey = '35.839.978/0001-26';
+    var pixName = 'JUNTOS PELO CEU';
+    var pixCity = 'CUIABA';
+
+    var donationModal = document.getElementById('donation-modal');
+    var donationQrContainer = document.getElementById('donation-qrcode');
+    var donationPayloadInput = document.getElementById('donation-pix-payload');
+    var qrCreated = false;
+
+    if (!donationModal) {
+      return;
+    }
+
+    function pad2(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function createTLV(tag, value) {
+      return tag + pad2(value.length) + value;
+    }
+
+    function calculateCRC16(str) {
+      var crc = 0xFFFF;
+      for (var i = 0; i < str.length; i++) {
+        crc ^= str.charCodeAt(i) << 8;
+        for (var j = 0; j < 8; j++) {
+          if (crc & 0x8000) {
+            crc = (crc << 1) ^ 0x1021;
+          } else {
+            crc = crc << 1;
+          }
+        }
+      }
+      var hex = (crc & 0xFFFF).toString(16).toUpperCase();
+      return hex.padStart(4, '0');
+    }
+
+    function generatePixPayload(key, name, city) {
+      var cleanKey = key.replace(/\D/g, '');
+      var gui = 'br.gov.bcb.pix';
+      var merchantAccountInfo = createTLV('00', gui) + createTLV('01', cleanKey);
+
+      var payloadWithoutCRC =
+        createTLV('00', '01') +
+        createTLV('01', '12') +
+        createTLV('26', merchantAccountInfo) +
+        createTLV('52', '0000') +
+        createTLV('53', '986') +
+        createTLV('58', 'BR') +
+        createTLV('59', name) +
+        createTLV('60', city) +
+        createTLV('62', createTLV('05', '***'));
+
+      var crcData = payloadWithoutCRC + '6304';
+      var crc = calculateCRC16(crcData);
+      return payloadWithoutCRC + '6304' + crc;
+    }
+
+    var pixPayload = generatePixPayload(pixKey, pixName, pixCity);
+
+    if (donationPayloadInput) {
+      donationPayloadInput.value = pixPayload;
+    }
+
+    function openDonationModal() {
+      donationModal.classList.add('open');
+      donationModal.setAttribute('aria-hidden', 'false');
+      body.style.overflow = 'hidden';
+
+      if (donationQrContainer && !qrCreated && typeof QRCode !== 'undefined') {
+        new QRCode(donationQrContainer, {
+          text: pixPayload,
+          width: 280,
+          height: 280,
+          colorDark: '#083768',
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        qrCreated = true;
+      }
+    }
+
+    function closeDonationModal() {
+      donationModal.classList.remove('open');
+      donationModal.setAttribute('aria-hidden', 'true');
+      body.style.overflow = '';
+    }
+
+    donationModal.addEventListener('click', function (event) {
+      if (event.target.getAttribute('data-action') === 'close-donation-modal') {
+        closeDonationModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (donationModal.classList.contains('open') && event.key === 'Escape') {
+        closeDonationModal();
+      }
+    });
+
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var inputId = this.getAttribute('data-copy');
+        var input = document.getElementById(inputId);
+        if (input) {
+          input.select();
+          document.execCommand('copy');
+          var originalText = this.textContent;
+          this.textContent = 'Copiado!';
+          this.classList.add('copied');
+          window.setTimeout(function () {
+            this.textContent = originalText;
+            this.classList.remove('copied');
+          }.bind(this), 2000);
+        }
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      var btn = event.target;
+      while (btn && btn !== document) {
+        if (btn.tagName === 'A' || btn.tagName === 'BUTTON') {
+          var href = (btn.getAttribute('href') || '').toLowerCase();
+          var text = (btn.textContent || '').toLowerCase();
+          if (text.indexOf('doa') !== -1 || text.indexOf('doar') !== -1 || href.indexOf('doacao') !== -1) {
+            event.preventDefault();
+            event.stopPropagation();
+            openDonationModal();
+            break;
+          }
+        }
+        btn = btn.parentNode;
+      }
+    }, { capture: true });
+  })();
 
   updateHeaderState();
 })();
